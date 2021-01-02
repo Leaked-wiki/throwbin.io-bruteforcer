@@ -1,4 +1,4 @@
-# throwbin.io-bruteforcer
+# Throwbin.io Bruteforcer
 A small project I made for educational purposes, I wanted to see how small and fast I could make it.
 # Screen Shots
 ------------
