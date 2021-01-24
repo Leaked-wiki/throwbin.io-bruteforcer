@@ -6,7 +6,7 @@ Speed improvements by https://cracked.to/amboss
 <img src="https://image.prntscr.com/image/i9P4lAbnRSWDZ2T-KMwg2A.png" href="https://pastehub.net" >
 
 # Compared to Original Version
-<iframe width="1864" height="808" src="https://www.youtube.com/embed/NYIndBxEufo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=NYIndBxEufo
 
 # Having problems opening the program?
 Download :
