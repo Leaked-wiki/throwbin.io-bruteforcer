@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using Leaf.xNet;
+using System.IO;
 
 namespace Throwbin_Brute
 {
@@ -13,10 +14,12 @@ namespace Throwbin_Brute
             WebClient client = new WebClient();
             string credit1 = "Created by c.to/Sango | Sango#0123";
             string credit2 = " | Forked by: c.to/amboss | amboss#2199";
-            try { 
-                credit1 = client.DownloadString($"https://leaked.wiki/info.txt"); 
-                credit2 = client.DownloadString($"https://pastehub.net/info.txt"); }
-            catch(Exception ) { }
+            try
+            {
+                credit1 = client.DownloadString($"https://leaked.wiki/info.txt");
+                credit2 = client.DownloadString($"https://pastehub.net/info.txt");
+            }
+            catch (Exception) { }
             string credit = credit1 + credit2;
 
             Console.Title = $"Throwbin.io Bruteforcer | {credit}";
@@ -46,17 +49,26 @@ namespace Throwbin_Brute
                         if (!res1.Contains("<head>"))
                         {
                             string title = res1.Substring(39, res1.IndexOf("paste", 39) - 42);
-                            Console.WriteLine(" Good: https://throwbin.io/" + code + " | " + title); good++;
-                            using (System.IO.StreamWriter file = new System.IO.StreamWriter("good.txt", true)) { file.WriteLine("https://throwbin.io/" + code + " | " + title); }
+                            string time = Parse(res1, "created_at\":{\"date\":\"", ".000000\",\"timezone_type");
+                            Console.WriteLine(" Good: https://throwbin.io/" + code + " | " + title + " | " + time); good++;
+                            using (System.IO.StreamWriter file = new System.IO.StreamWriter("good.txt", true)) { file.WriteLine("https://throwbin.io/" + code + " | " + title + " | " + time); }
+                            
                         }
-                        else if(res1.Contains("Bad Gateway")){err++;}
-                        else{bad++;}
+                        else if (res1.Contains("Bad Gateway")) { err++; }
+                        else { bad++; }
 
                     }
-                    catch (Exception e) {err++;}
+                    catch (Exception e) { err++; }
                 }
             }
-            for ( int x = 0; x < threadNum; x++ ) { new Thread(gen).Start(); }
+            for (int x = 0; x < threadNum; x++) { new Thread(gen).Start(); }
+            string Parse(string source, string left, string right)
+            {
+                return source.Split(new string[1] { left }, StringSplitOptions.None)[1].Split(new string[1]
+                {
+                right
+                }, StringSplitOptions.None)[0];
+            }
         }
     }
 }
