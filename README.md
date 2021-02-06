@@ -1,8 +1,12 @@
 # Throwbin.io Bruteforcer
-A small project I made for educational purposes, I wanted to see how small and fast I could make it.
+A small project made by https://cracked.to/Sango
+Speed improvements by https://cracked.to/amboss
 
 # Screenshots
-<img src="https://i.imgur.com/tDKg3Qf.png" href="https://leaked.wiki" >
+<img src="https://image.prntscr.com/image/SvsfcNANQOiqJbtBcqilng.png">
+
+# Compared to Original Version
+https://www.youtube.com/watch?v=NYIndBxEufo
 
 # Having problems opening the program?
 Download :
